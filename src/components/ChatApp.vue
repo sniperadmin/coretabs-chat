@@ -4,6 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <!-- row title -->
           <div class="row justify-content-center">
             <h4 class="text-md-center">Responsive Chat Template</h4>
           </div>
@@ -21,18 +22,15 @@
                     </div>
                     <div class="card-block">
                       <form style="border: 1px solid grey">
-                        <div class="form-group" style="text-align: left;">
+                        <!-- div message -->
+                        <div class="form-group pb-chat-labels-left">
                           <span class="fa fa-lg fa-user pb-chat-fa-user"></span>
-                          <span
-                            class="tag label-default pb-chat-labels pb-chat-labels-left"
-                          >
+                          <span class="tag label-default pb-chat-labels">
                             Hi, how are you?
                           </span>
                         </div>
                         <hr />
-                        <div
-                          class="form-group float-xs-right pb-chat-labels-right"
-                        >
+                        <div class="form-group pb-chat-labels-right">
                           <span
                             class="tag label-primary pb-chat-labels pb-chat-labels-primary"
                             >Hi, i'm fine, you?</span
@@ -40,7 +38,7 @@
                             class="fa fa-lg fa-user pb-chat-fa-user"
                           ></span>
                         </div>
-                        <div class="clearfix"></div>
+                        <!-- <div class="clearfix"></div> -->
                         <hr />
                       </form>
                     </div>
@@ -102,14 +100,13 @@ export default {
 }
 
 .pb-chat-labels-right {
-  margin-bottom: 0;
   margin-right: 5px;
   text-align: right;
 }
 
 .pb-chat-labels-left {
-  margin-bottom: 0;
-  margin-left: 10px;
+  margin-left: 5px;
+  text-align: left;
 }
 
 .pb-chat-labels-primary {
@@ -124,7 +121,7 @@ export default {
 }
 
 .pb-chat-textarea {
-  /* resize: none; */
+  resize: none;
   width: 100%;
 }
 
