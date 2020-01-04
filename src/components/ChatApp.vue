@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <!-- row title -->
+          <!-- عنوان كبير -->
           <div class="row justify-content-center">
             <h4 class="text-md-center">Responsive Chat Template</h4>
           </div>
@@ -16,11 +16,13 @@
                     <div class="card card-header pb-chat-panel-heading">
                       <div class="row">
                         <div class="col-xs-12">
+                          <!-- عنوان الشات -->
                           <label id="support_label">app title</label>
                         </div>
                       </div>
                     </div>
                     <div class="card-block">
+                      <!-- الفورم -->
                       <form v-chat-scroll style="border: 1px solid grey">
                         <!-- div message -->
                         <div
@@ -55,16 +57,6 @@
                           </p>
                           <hr />
                         </div>
-                        <!-- <div class="form-group pb-chat-labels-right">
-                          <span
-                            class="tag label-primary pb-chat-labels pb-chat-labels-primary"
-                            >Hi, i'm fine, you?</span
-                          ><span
-                            class="fa fa-lg fa-user pb-chat-fa-user"
-                          ></span>
-                        </div> -->
-                        <!-- <div class="clearfix"></div> -->
-                        <!-- <hr /> -->
                       </form>
                     </div>
                     <div class="card-footer">
@@ -114,6 +106,18 @@ export default {
     };
   },
   methods: {
+    UserChecker(user) {
+      if (user) {
+        const cashedUser = user;
+        this.authUser = cashedUser;
+        console.log(this.authUser);
+        // const allUsers = [];
+        // allUsers.push(user);
+        // this.users = allUsers;
+      } else {
+        this.authUser = {};
+      }
+    },
     saveMsg() {
       // save to fs
       db.collection("chat").add({
@@ -140,18 +144,7 @@ export default {
     }
   },
   created() {
-    let user = firebase.auth().currentUser;
-    if (user) {
-      const cashedUser = user;
-      this.authUser = cashedUser;
-      console.log(this.authUser);
-      // const allUsers = [];
-      // allUsers.push(user);
-      // this.users = allUsers;
-    } else {
-      this.authUser = {};
-    }
-
+    firebase.auth().onAuthStateChanged(this.UserChecker);
     this.fetchMsg();
   }
 };

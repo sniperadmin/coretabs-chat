@@ -3,6 +3,10 @@
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card card-signin my-5">
         <div class="card-body">
+          <img
+            class="mb-3"
+            src="https://forums.coretabs.net/uploads/default/original/1X/39441587eb3d89a75b179466bac1f98fd4adc18e.png"
+          />
           <h5 class="card-title text-center">Coretabs Chat Sign In</h5>
           <hr class="my-4" />
           <button
